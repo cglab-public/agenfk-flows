@@ -1,7 +1,8 @@
 {
   "name": "TDD Flow",
-  "description": "TDD-based workflow that begins with the tests, failing at start, then moves the flow forward making the tests pass through actual funcionality implementation.",
-  "version": "1.0.0",
+  "description": "TDD-based workflow that begins with the tests, failing at start, then moves the flow forward and makes the tests pass through actual funcionality implementation.",
+  "author": "dpolistwm",
+  "version": "1.0.1",
   "steps": [
     {
       "name": "TODO",
