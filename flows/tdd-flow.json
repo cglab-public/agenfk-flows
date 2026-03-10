@@ -1,7 +1,7 @@
 {
   "name": "TDD Flow",
   "description": "TDD-based workflow that begins with the tests, failing at start, then moves the flow forward and makes the tests pass through actual funcionality implementation.",
-  "author": "dpolistwm",
+  "author": "hgflima",
   "version": "1.0.1",
   "steps": [
     {
@@ -15,23 +15,27 @@
       "name": "CREATE_UNIT_TESTS",
       "label": "Unit Tests",
       "exitCriteria": "All Tests for the required functionality should be implemented so that they reflect future functionality - they can all fail at this point, no problem. Tests will guide the implementation itself. All code starts with the test.",
+      "isSpecial": false,
       "order": 1
     },
     {
       "name": "IN_PROGRESS",
       "label": "In Progress",
       "exitCriteria": "All tests are passing, because functionality that is tested by them is actually implemented and working.",
+      "isSpecial": false,
       "order": 2
     },
     {
       "name": "REVIEW",
       "label": "Review",
       "exitCriteria": "Code is syntatically and semantically reviewd (including security aspects)",
+      "isSpecial": false,
       "order": 3
     },
     {
       "name": "DONE",
       "label": "Done",
+      "exitCriteria": "",
       "isAnchor": true,
       "order": 4
     }
