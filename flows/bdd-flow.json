@@ -1,0 +1,46 @@
+{
+  "name": "BDD Flow",
+  "description": "BDD-based workflow that begins with the development of Gherkin-style BDD tests, failing at start, then moves the flow forward making the tests pass through actual funcionality implementation.",
+  "author": "dpolistwm",
+  "version": "1.0.0",
+  "steps": [
+    {
+      "name": "TODO",
+      "label": "To Do",
+      "exitCriteria": "Card and sub-cards (if story or epic) must have a well defined Gherkin-formatted description (use markdown)\n\n*Feature*: A high-level description of a software functionality.\n*Scenario (or Example)*: A specific, concrete example of a behavior.\n*Given*: Describes the initial context or state (precondition).\n*When*: Describes the key action or event performed by the user.\n*Then*: Describes the expected outcome, result, or validation.\n*And / But*: Used to add additional conditions to steps.\n*Background*: Defines a common step that runs before every scenario in a feature file.",
+      "isAnchor": true,
+      "order": 0
+    },
+    {
+      "name": "DISCOVERY",
+      "label": "Discovery",
+      "exitCriteria": "If the user request is not specific enough, questions must be asked so the details are good enough to start the implementation. \nOnce you have all the information, cards at right granulaty (Epic, Story, Task or Bug) must be fully created.\nThe user must give you the go-ahead before you move forward with the implementation. ",
+      "order": 1
+    },
+    {
+      "name": "CREATE_GHERKIN_TESTS",
+      "label": "BDD Tests",
+      "exitCriteria": "All BDD Tests for features and scenarios defined in the card for the required functionality should be implemented (using Cucumber, for example) so that they reflect future functionality - they can all fail at this point, no problem. The features and scenarios will guide the implementation itself. All code starts with the test.",
+      "order": 2
+    },
+    {
+      "name": "IN_PROGRESS",
+      "label": "In Progress",
+      "exitCriteria": "All tests are passing, because functionality that is tested by them is actually implemented and working.",
+      "order": 3
+    },
+    {
+      "name": "REVIEW",
+      "label": "Review",
+      "exitCriteria": "Code is syntatically and semantically reviewd (including security aspects)",
+      "order": 4
+    },
+    {
+      "name": "DONE",
+      "label": "Done",
+      "exitCriteria": "",
+      "isAnchor": true,
+      "order": 5
+    }
+  ]
+}
