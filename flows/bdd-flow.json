@@ -1,0 +1,39 @@
+{
+  "name": "BDD Flow",
+  "description": "BDD-based workflow that begins with the development of Gherkin-style BDD tests, failing at start, then moves the flow forward making the tests pass through actual funcionality implementation.",
+  "version": "1.0.0",
+  "steps": [
+    {
+      "name": "TODO",
+      "label": "To Do",
+      "exitCriteria": "",
+      "isAnchor": true,
+      "order": 0
+    },
+    {
+      "name": "CREATE_GHERKIN_TESTS",
+      "label": "BDD Tests",
+      "exitCriteria": "All BDD/Gherkin Tests for the required functionality should be implemented so that they reflect future functionality - they can all fail at this point, no problem. Tests will guide the implementation itself. All code starts with the test.",
+      "order": 1
+    },
+    {
+      "name": "IN_PROGRESS",
+      "label": "In Progress",
+      "exitCriteria": "All tests are passing, because functionality that is tested by them is actually implemented and working.",
+      "order": 2
+    },
+    {
+      "name": "REVIEW",
+      "label": "Review",
+      "exitCriteria": "Code is syntatically and semantically reviewd (including security aspects)",
+      "order": 3
+    },
+    {
+      "name": "DONE",
+      "label": "Done",
+      "exitCriteria": "",
+      "isAnchor": true,
+      "order": 4
+    }
+  ]
+}
