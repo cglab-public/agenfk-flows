@@ -2,7 +2,7 @@
   "name": "TDD Flow",
   "description": "TDD-based workflow that begins with the tests, failing at start, then moves the flow forward and makes the tests pass through actual funcionality implementation.",
   "author": "dpolistwm",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "steps": [
     {
       "name": "TODO",
@@ -12,28 +12,34 @@
       "order": 0
     },
     {
+      "name": "DISCOVERY",
+      "label": "Discovery",
+      "exitCriteria": "If the user request is not specific enough, questions must be asked so the details are good enough to start the implementation. \nOnce you have all the information, cards at right granulaty (Epic, Story, Task or Bug) must be fully created.\nThe user must give you the go-ahead before you move forward with the implementation. ",
+      "order": 1
+    },
+    {
       "name": "CREATE_UNIT_TESTS",
       "label": "Unit Tests",
       "exitCriteria": "All Tests for the required functionality should be implemented so that they reflect future functionality - they can all fail at this point, no problem. Tests will guide the implementation itself. All code starts with the test.",
-      "order": 1
+      "order": 2
     },
     {
       "name": "IN_PROGRESS",
       "label": "In Progress",
       "exitCriteria": "All tests are passing, because functionality that is tested by them is actually implemented and working.",
-      "order": 2
+      "order": 3
     },
     {
       "name": "REVIEW",
       "label": "Review",
       "exitCriteria": "Code is syntatically and semantically reviewd (including security aspects)",
-      "order": 3
+      "order": 4
     },
     {
       "name": "DONE",
       "label": "Done",
       "isAnchor": true,
-      "order": 4
+      "order": 5
     }
   ]
 }
