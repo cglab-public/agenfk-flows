@@ -1,0 +1,46 @@
+{
+  "name": "IAC FLOW",
+  "description": "Infrastructure-as-code workflow. Never run terraform apply. Always run terraform commands locally (fmt/validate/plan). Any Docker change must be built and run locally first with podman or docker.",
+  "author": "devleor",
+  "version": "1.0.0",
+  "steps": [
+    {
+      "name": "TODO",
+      "label": "To Do",
+      "exitCriteria": "",
+      "isAnchor": true,
+      "order": 0
+    },
+    {
+      "name": "VALIDATE_LOCAL",
+      "label": "Validate (local)",
+      "exitCriteria": "`terraform fmt -check -recursive` shows no diffs and `terraform init -backend=false && terraform validate` passes for every touched module — run locally on this machine. All syntax/lint errors resolved before moving on. No CI-only validation.",
+      "order": 1
+    },
+    {
+      "name": "PLAN_LOCAL",
+      "label": "Plan (local)",
+      "exitCriteria": "`terraform plan` run locally against the target workspace and the full diff read line by line. Every replacement, destroy, and IAM/boundary change is intentional and explicitly called out. `terraform apply` is FORBIDDEN in this flow — never run it; the reviewed plan is the only artifact that advances this step.",
+      "order": 2
+    },
+    {
+      "name": "REVIEW",
+      "label": "Review",
+      "exitCriteria": "Diff re-read against the change intent: no debug leftovers, no hardcoded secrets/account IDs, values parameterized as variables. All secrets and keys live in SSM Parameter Store (referenced via data sources / ssm:, never inlined in code or tfvars). A separate adversarial pass (second agent/reviewer) raises no blocking issues. The terraform plan is reviewed for blast radius: every resource deletion and replacement is enumerated and justified, and any change with critical production impact (data loss on stateful resources, downtime, IAM/networking/security-group changes) is explicitly flagged and approved before it ships. PR opened against `main`.",
+      "order": 3
+    },
+    {
+      "name": "DOCKER_LOCAL",
+      "label": "Docker (local)",
+      "exitCriteria": "Any Dockerfile/image change is BOTH built (`docker build` / `podman build`) AND run (`docker run` / `podman run`) locally: container boots clean and a smoke check passes (e.g. `curl localhost:<port>/healthcheck` → 200). Boot-time failures (non-root perms, wrong port, missing env) are caught here, not in deploy. A successful build alone does NOT advance the step.",
+      "order": 4
+    },
+    {
+      "name": "DONE",
+      "label": "Done",
+      "exitCriteria": "",
+      "isAnchor": true,
+      "order": 5
+    }
+  ]
+}
