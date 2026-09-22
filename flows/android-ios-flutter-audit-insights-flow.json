@@ -1,0 +1,22 @@
+{
+  "name": "[Android - IOs - Flutter] Audit & Insights Flow",
+  "description": "[Android - IOs - Flutter] Audit & Insights Flow",
+  "author": "jonasferreirawebmotors",
+  "version": "1.0.0",
+  "steps": [
+    {
+      "name": "ANALYSIS",
+      "label": "ANALYSIS",
+      "exitCriteria": "Escopo de investigação definido; código/config relevante lido e mapeado (WebView, deep links, deps, etc — conforme story).",
+      "isSpecial": false,
+      "order": 0
+    },
+    {
+      "name": "REPORT",
+      "label": "REPORT",
+      "exitCriteria": "Achados documentados com arquivo:linha, risco, sugestão; anexados ao item via agenfk add-context ou agenfk comment.",
+      "isSpecial": false,
+      "order": 1
+    }
+  ]
+}
